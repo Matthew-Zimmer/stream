@@ -1,33 +1,19 @@
-CMake_Minimum_Required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.13)
 
-Project(Stream)
+project(stream)
 
-If(DEFINED TESTING)
-	If(${TESTING} STREQUAL true)
-		Add_Executable(Stream "Test/Main.cpp")
-		Target_Compile_Definitions(Stream PRIVATE TESTING)
-		Add_Subdirectory(Test)
-	Else()
-		Add_Library(Stream STATIC "")
-	EndIf()
-	Unset(TESTING CACHE)
-ELSE()
-	Add_Library(Stream STATIC "")
-EndIf()
+add_library(stream INTERFACE)
 
-Add_Subdirectory(Source)
-Add_Subdirectory(Include)
-Add_Subdirectory(Imp)
+add_subdirectory(include)
+add_subdirectory(src)
 
-Target_Compile_Features(Stream 
-    PUBLIC cxx_std_17)
+target_compile_features(stream INTERFACE cxx_std_17)
 
-Set(CMAKE_CXX_STANDARD "libc++")
 #Set(CMAKE_CXX_FLAGS "-Wall" "-Wextra")
 
-Install(TARGETS Stream EXPORT Stream DESTINATION lib/Stream)
-Install(EXPORT Stream DESTINATION lib/Stream)
-Install(FILES StreamConfig.cmake DESTINATION lib/Stream)
+install(TARGETS stream EXPORT stream DESTINATION lib/stream)
+install(EXPORT stream DESTINATION lib/stream)
+install(FILES stream-config.cmake DESTINATION lib/stream)
 
-Find_Package(Reflection REQUIRED)
-Target_Link_Libraries(Stream PUBLIC Reflection)
+find_Package(reflection REQUIRED)
+target_link_libraries(stream INTERFACE reflection)
