@@ -5,7 +5,7 @@
 #include <sys/socket.h>//linux only :P
 #include <unistd.h>
 
-namespace Slate::Stream
+namespace Slate::Streams
 {
     /*  
         Summary:

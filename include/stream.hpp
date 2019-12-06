@@ -5,7 +5,7 @@
 
 namespace Slate
 {
-    namespace Stream
+    namespace Streams
     {
         //General Stream class
         template <template <typename> typename ... FTypes>

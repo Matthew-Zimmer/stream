@@ -11,7 +11,7 @@
 
 #include "serializable.hpp"
 
-namespace Slate::Stream
+namespace Slate::Streams
 {
     namespace Binary_Formatting
     {

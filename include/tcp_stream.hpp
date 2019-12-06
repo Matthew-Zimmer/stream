@@ -1,7 +1,7 @@
 #pragma once
 #include "basic_network.hpp"
 
-namespace Slate::Stream
+namespace Slate::Streams
 {
     /*  
         Summary:

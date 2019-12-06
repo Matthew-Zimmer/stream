@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Slate::Stream
+namespace Slate::Streams
 {
 	/*
 		Summary:

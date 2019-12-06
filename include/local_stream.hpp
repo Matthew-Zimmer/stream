@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-namespace Slate::Stream
+namespace Slate::Streams
 {
     /*  
         Summary:
