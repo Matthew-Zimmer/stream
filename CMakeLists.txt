@@ -16,4 +16,3 @@ install(EXPORT stream DESTINATION lib/stream)
 install(FILES stream-config.cmake DESTINATION lib/stream)
 
 find_Package(reflection REQUIRED)
-target_link_libraries(stream INTERFACE reflection)
